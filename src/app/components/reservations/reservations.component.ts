@@ -31,4 +31,23 @@ export class ReservationsComponent implements OnInit {
       }
     );
   }
+
+  // Method to delete a reservation
+  deleteReservation(reservationId: number): void {
+    if (confirm('Are you sure you want to delete this reservation?')) {
+      this.loading = true;
+      this.reservationService.deleteReservation(reservationId).subscribe(
+        () => {
+          // Remove the deleted reservation from the list
+          this.reservations = this.reservations.filter(reservation => reservation.id !== reservationId);
+          this.loading = false;
+        },
+        (error) => {
+          console.error('Error deleting reservation:', error);
+          this.error = 'Failed to delete reservation';
+          this.loading = false;
+        }
+      );
+    }
+  }
 }

@@ -31,4 +31,22 @@ export class TerrainComponent implements OnInit {
       }
     );
   }
+
+  deleteTerrain(terrainId: number): void {
+    if (confirm('voulez vous vraiment supprimer ce terrain?')) {
+      this.loading = true;
+      this.terrainService.deleteTerrain(terrainId).subscribe(
+        () => {
+          // Remove the deleted reservation from the list
+          this.terrains = this.terrains.filter(terrain => terrain.id !== terrainId);
+          this.loading = false;
+        },
+        (error) => {
+          console.error('Error deleting trrain:', error);
+          this.error = 'Failed to delete trrain';
+          this.loading = false;
+        }
+      );
+    }
+  }
 }

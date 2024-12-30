@@ -31,4 +31,13 @@ export class AdminService {
   return this.http.post<any>(`${this.baseUrl}/addReservation`, reservation);
   }
 
+  deleteReservation(reservationId: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/reservation/${reservationId}`);
+  }
+
+  deleteTerrain(reservationId: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/terrain/${reservationId}`);
+  }
+
+
 }

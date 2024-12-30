@@ -61,7 +61,7 @@
                             <td>{{ terrain.id }}</td>
                             <td>{{ terrain.nom }}</td>
                             <td>{{ terrain.surface }}</td>
-                            <td><a href="" class="btn btn-danger">DELETE</a> </td>
+                            <button (click)="deleteTerrain(terrain.id)">Delete</button>
                         </tr>
                     </tbody>
                 </table>

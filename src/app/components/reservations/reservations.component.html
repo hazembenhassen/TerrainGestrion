@@ -73,9 +73,8 @@
                                 <td>{{ reservation.heure_debut }}</td>
                                 <td>{{ reservation.heure_fin }}</td>
                                 <td>
-                                    <button class="btn btn-danger btn-sm">
-                                        DELETE
-                                    </button>
+                                    <button (click)="deleteReservation(reservation.id)">Delete</button>
+
                                 </td>
                             </tr>
                             <tr *ngIf="reservations.length === 0">
