@@ -10,6 +10,8 @@ import { AppRoutingModule } from './components/app-routing.module';
 import { TerrainComponent } from './components/terrain/terrain.component';
 import { AdherantsComponent } from './components/adherants/adherants.component';
 import { ReserverComponent } from './components/reserver/reserver.component';
+import { AjouterTerrainComponent } from './components/ajouter-terrain/ajouter-terrain.component';
+import { AjouterAdherantComponent } from './components/ajouter-adherant/ajouter-adherant.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ReserverComponent } from './components/reserver/reserver.component';
     TerrainComponent,
     ReservationsComponent ,
     AdherantsComponent,
-    ReserverComponent
+    ReserverComponent,
+    AjouterTerrainComponent,
+    AjouterAdherantComponent
   ],
   imports: [
     BrowserModule,

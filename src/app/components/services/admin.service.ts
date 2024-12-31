@@ -39,5 +39,12 @@ export class AdminService {
     return this.http.delete<void>(`${this.baseUrl}/terrain/${reservationId}`);
   }
 
+  addTerrain(terrain: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/addTerrain`, terrain);
+    }
+  addAdherant(adherant: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/addAdherant`, adherant);
+    }
+  
 
 }
